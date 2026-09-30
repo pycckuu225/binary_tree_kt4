@@ -41,14 +41,6 @@ public class MyBinaryTree {
     }
 
 
-
-    public int findMax(MyNode root){
-        int leftMax = findMax(root.left);
-        int rightMax = findMax(root.right);
-
-        return (Math.max(root.value, Math.max(leftMax, rightMax)));
-    }
-
     public int anyFindMin(MyNode root){
 
         if (root.left != null){
