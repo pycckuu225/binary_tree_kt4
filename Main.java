@@ -35,6 +35,7 @@ public class Main {
         }
 
         System.out.println(tree.anyFindMin(tree.root));
+        tree.printTree(tree.root, "", false);
 
     }
 

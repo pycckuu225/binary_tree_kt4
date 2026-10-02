@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class MyBinaryTree {
 
     MyNode root;
@@ -51,5 +54,19 @@ public class MyBinaryTree {
         }
         return min;
     }
+
+    public void printTree(MyNode node, String prefix, boolean isLeft) {
+        if (node == null) return;
+
+        // Сначала выводим правое поддерево (оно будет сверху в консоли)
+        printTree(node.right, prefix + (isLeft ? "│   " : "    "), false);
+
+        // Печатаем саму ноду с палочками
+        System.out.println(prefix + (isLeft ? "└── " : "┌── ") + node.value);
+
+        // Потом выводим левое поддерево (оно будет снизу в консоли)
+        printTree(node.left, prefix + (isLeft ? "    " : "│   "), true);
+    }
+
 
 }
